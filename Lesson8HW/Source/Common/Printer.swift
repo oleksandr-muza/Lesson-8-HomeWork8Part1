@@ -9,10 +9,8 @@ import Foundation
 
 class Printer {
     
-   weak var yellowViewController: YellowViewController?
-   weak var blueViewController: BlueViewController?
-   weak var redViewController: RedViewController?
-    
+    var delegate: ColoredViews? = nil
+       
     private var timer: Timer?
     private var seconds: Int = 0
     
@@ -38,15 +36,15 @@ class Printer {
         
         let secondsText = "\(seconds) секунд"
         
-        if let textToPrint = yellowViewController?.textToPrint() {
+        if let textToPrint = delegate?.yellow {
             print("\(textToPrint) \(secondsText)")
         }
         
-        if let textToPrint = blueViewController?.textToPrint() {
+        if let textToPrint = delegate?.blue {
             print("\(textToPrint) \(secondsText)")
         }
         
-        if let textToPrint = redViewController?.textToPrint() {
+        if let textToPrint = delegate?.red {
             print("\(textToPrint) \(secondsText)")
         }
         

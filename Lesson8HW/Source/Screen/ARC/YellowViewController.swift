@@ -31,6 +31,7 @@ class YellowViewController: UIViewController {
 //MARK: - Private
 private extension YellowViewController {
     
+    
     func setupUI() {
         view.backgroundColor = .lightYellow
         
@@ -48,7 +49,7 @@ private extension YellowViewController {
     func setup() {
         
         printer = Printer()
-        printer.yellowViewController = self
+        printer.delegate = self
         
         printer.startPrinting()
         
@@ -56,3 +57,24 @@ private extension YellowViewController {
     
     
 }
+
+extension YellowViewController: ColoredViews {
+    var yellow: String? {
+        textToPrint()
+    }
+    
+    var blue: String? {
+        nil
+    }
+    
+    var red: String? {
+        nil
+    }
+    
+   
+    
+  
+    
+    
+}
+

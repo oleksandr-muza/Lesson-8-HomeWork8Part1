@@ -42,8 +42,30 @@ private extension RedViewController {
     func setup() {
         
         printer = Printer()
-        printer.redViewController = self
+        printer.delegate = self
         
         printer.startPrinting()
     }
+    
+    
+}
+    
+extension RedViewController: ColoredViews {
+    var yellow: String? {
+        nil
+    }
+    
+    var blue: String? {
+        nil
+    }
+    
+    var red: String? {
+        textToPrint()
+    }
+    
+  
+    
+  
+    
+    
 }
