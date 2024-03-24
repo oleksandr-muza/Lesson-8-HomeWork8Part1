@@ -15,11 +15,17 @@ class YellowViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setup()
+        
     }
     
     func textToPrint() -> String {
         return "🚖 - жовте таксі у дорозі"
     }
+    
+    deinit{
+        print("Pit-stop")
+    }
+  
 }
 
 //MARK: - Private
@@ -45,5 +51,8 @@ private extension YellowViewController {
         printer.yellowViewController = self
         
         printer.startPrinting()
+        
     }
+    
+    
 }

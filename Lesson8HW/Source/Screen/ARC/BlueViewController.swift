@@ -20,6 +20,8 @@ class BlueViewController: UIViewController {
     func textToPrint() -> String {
         return "🚙 - синє таксі у дорозі"
     }
+    
+    
 }
 
 //MARK: - Private

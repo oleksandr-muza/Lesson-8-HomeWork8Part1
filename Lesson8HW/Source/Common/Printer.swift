@@ -9,12 +9,13 @@ import Foundation
 
 class Printer {
     
-    var yellowViewController: YellowViewController?
-    var blueViewController: BlueViewController?
-    var redViewController: RedViewController?
+   weak var yellowViewController: YellowViewController?
+   weak var blueViewController: BlueViewController?
+   weak var redViewController: RedViewController?
     
     private var timer: Timer?
     private var seconds: Int = 0
+    
     
     func startPrinting() {
         
@@ -51,4 +52,6 @@ class Printer {
         
         seconds += 1
     }
+    
+    
 }
